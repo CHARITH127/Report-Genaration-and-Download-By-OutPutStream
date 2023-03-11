@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Web Application</title>
+    <link rel="stylesheet" href="assests/stylesheet/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/stylesheet/indexStyles/indexStyleSheet.css">
+    <meta name="viewport" content="width=device-width initial scale=1">
+    <link rel="stylesheet" href="assests/stylesheet/fonts/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Nunito:wght@300;400;600&family=PT+Serif:wght@700&family=Poppins:wght@300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assests/stylesheet/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+<!--login interface starts-->
+<div id="loginPage">
+    <div class="form_container">
+        <div class="login_cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="login_heading">
+                            <p>Rengivo Holding(pvt) ltd</p>
+                            <span>We are given the best experience to you...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="login_image_container">
+                            <img src="assests/images/login_Image.jpg" alt="loginImage">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="login_form_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="login_welcome_banner">
+                                            <span>Start From Here</span>
+                                            <p>Rengivo Holding(pvt) ltd</p>
+                                            <span>Don't have an account ?  <a id="redirectToCustomerRegistration"> create an account</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="login_welcome_banner">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="login_user_name"
+                                                       placeholder="name@example.com">
+                                                <label for="login_user_name">User Name</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="login_password"
+                                                       placeholder="name@example.com">
+                                                <label for="login_password">Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="login_button_container">
+                                        <button style="width: 100%" type="button" id="btn_login_button"
+                                                class="btn btn-primary">Login
+                                        </button>
+                                        <p>This site is protected by reCAPTION and the google
+                                            <span>Privacy Policy</span> and <span>Terms of Security</span>apply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--login interface ends-->
+
+<section id="customerPageContext">
+    <div class="form_container">
+        <div class="customerFormCover">
+            <div class="d-flex flex-column mb-3">
+                <div class="mb-1">
+                    <span class="logoutContainer input-group-text">
+                    <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                </div>
+                <div class="p-2 mb-1">
+                    <div class="d-flex flex-row">
+                        <div class="p-2 fieldContainers">
+                            <div class="textfieldContainers p-1 d-flex flex-column mb-1">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="userId" placeholder="C001">
+                                    <label for="userId">User ID</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="address" placeholder="Gampaha">
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="telephoneNumber"
+                                           placeholder="0702347658">
+                                    <label for="telephoneNumber">TelephoneNumber</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 fieldContainers">
+                            <div class="textfieldContainers p-1 d-flex flex-column mb-1">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="userName" placeholder="Wishvajith">
+                                    <label for="userName">User Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="wish@gmail.com">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="input form-control" id="password"
+                                               data-toggle="password">
+                                        <div class="input-group-append">
+                                                <span class="hideIconContainer input-group-text"
+                                                      onclick="password_show_hide();">
+                                                  <i class="fas fa-eye" id="show_eye"></i>
+                                                  <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Confirm Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="input form-control" id="confirmPassword"
+                                               data-toggle="password">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-2 pb-2 mb-3">
+                <div class="d-flex flex-row justify-content-end">
+                    <div>
+                        <div class="buttonContainer">
+                            <button type="button" class="btn btn-danger" id="btnDeleteCustomer">Delete Customer
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="buttonContainer">
+                            <button type="button" class="btn btn-primary" id="btnUpdateCustomer" disabled>Update
+                                Customer
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="buttonContainer">
+                            <button type="button" class="btn btn-success" id="btnCustomerSave" disabled>Save
+                                Customer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <table id="customerTabele" class="table table-fluid ">
+                    <thead>
+                    <tr>
+                        <th id="tblUserID" scope="col">UserID</th>
+                        <th id="tblUserName" scope="col">UserName</th>
+                        <th id="tblAddress" scope="col">Address</th>
+                        <th id="tblUseEmail" scope="col">Email</th>
+                        <th id="tblTelephoneNumber" scope="col">Telephone Number</th>
+                    </tr>
+                    </thead>
+                    <tbody class="customerTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="assests/jQuery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="assests/stylesheet/boostrap/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="Scripts/loginForm.js"></script>
+<script src="Scripts/CustomerForm.js"></script>
+</body>
+</html>
